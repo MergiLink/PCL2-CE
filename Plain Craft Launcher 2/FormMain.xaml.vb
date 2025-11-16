@@ -3,6 +3,7 @@ Imports System.Runtime.InteropServices
 Imports System.Windows.Interop
 Imports System.Windows.Media.Effects
 Imports PCL.Core.App
+Imports PCL.Core.App.Updates
 Imports PCL.Core.Logging
 Imports PCL.Core.Utils
 Imports PCL.Core.Utils.OS

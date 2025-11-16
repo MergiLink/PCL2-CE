@@ -4,6 +4,7 @@ Imports System.Net.Http
 Imports System.Runtime.InteropServices
 Imports System.Security.Cryptography
 Imports PCL.Core.App
+Imports PCL.Core.App.Updates
 Imports PCL.Core.IO
 Imports PCL.Core.UI
 Imports PCL.Core.Utils
