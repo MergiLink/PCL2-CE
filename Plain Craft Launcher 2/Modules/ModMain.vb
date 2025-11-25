@@ -500,6 +500,7 @@ EndHint:
     Public FrmOtherTest As PageOtherTest
     Public FrmOtherFeedback As PageOtherFeedback
     Public FrmOtherLog As PageOtherLog
+    Public FrmTestLeft As PageMergilinkLeft
 
     '登录页面声明
     Public FrmLoginAuth As PageLoginAuth

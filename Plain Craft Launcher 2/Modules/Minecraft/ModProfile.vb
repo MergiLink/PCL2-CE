@@ -232,9 +232,9 @@ Public Module ModProfile
     Public Sub CreateProfile()
         Dim selectedAuthTypeNum As Integer? = Nothing '验证类型序号
         RunInUiWait(Sub()
-                        Dim authTypeList As List(Of IMyRadio)
-                        If ProfileList.Any(Function(x) x.Type = McLoginType.Ms) Then
-                            authTypeList = New List(Of IMyRadio) From
+                        '已注释：移除必须先有正版账号才能添加其他类型账号的限制
+                        'If ProfileList.Any(Function(x) x.Type = McLoginType.Ms) Then
+                        Dim authTypeList As New List(Of IMyRadio) From
                             {
                                 New MyListItem With {
                                     .Title = "正版验证",
@@ -251,16 +251,16 @@ Public Module ModProfile
                                     .Logo = Logo.IconButtonOffline
                                 }
                             }
-                        Else
-                            authTypeList = New List(Of IMyRadio) From
-                            {
-                                New MyListItem With {
-                                    .Title = "正版验证",
-                                    .Type = MyListItem.CheckType.RadioBox,
-                                    .Logo = Logo.IconButtonAuth
-                                }
-                            }
-                        End If
+                        'Else
+                        '    authTypeList = New List(Of IMyRadio) From
+                        '    {
+                        '        New MyListItem With {
+                        '            .Title = "正版验证",
+                        '            .Type = MyListItem.CheckType.RadioBox,
+                        '            .Logo = Logo.IconButtonAuth
+                        '        }
+                        '    }
+                        'End If
                         selectedAuthTypeNum = MyMsgBoxSelect(authTypeList, "新建档案 - 选择验证类型", "继续", "取消")
                     End Sub)
         If selectedAuthTypeNum Is Nothing Then Exit Sub
