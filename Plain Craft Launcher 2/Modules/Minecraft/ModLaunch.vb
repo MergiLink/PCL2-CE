@@ -293,16 +293,17 @@ NextInner:
         End If
 #End If
         '正版购买提示
-        If Not ProfileList.Any(Function(x) x.Type = McLoginType.Ms) Then
-            Select Case MyMsgBox("你必须先登录正版账号才能启动游戏！", "正版验证", "购买正版", "试玩", "返回",
-                    Button1Action:=Sub() OpenWebsite("https://www.xbox.com/zh-cn/games/store/minecraft-java-bedrock-edition-for-pc/9nxp44l49shj"))
-                Case 2
-                    Hint("游戏将以试玩模式启动！", HintType.Critical)
-                    CurrentLaunchOptions.ExtraArgs.Add("--demo")
-                Case 3
-                    Throw New Exception("$$")
-            End Select
-        End If
+        '已注释：允许添加其他类型账号而无需先登录正版账号
+        'If Not ProfileList.Any(Function(x) x.Type = McLoginType.Ms) Then
+        '    Select Case MyMsgBox("你必须先登录正版账号才能启动游戏！", "正版验证", "购买正版", "试玩", "返回",
+        '            Button1Action:=Sub() OpenWebsite("https://www.xbox.com/zh-cn/games/store/minecraft-java-bedrock-edition-for-pc/9nxp44l49shj"))
+        '        Case 2
+        '            Hint("游戏将以试玩模式启动！", HintType.Critical)
+        '            CurrentLaunchOptions.ExtraArgs.Add("--demo")
+        '        Case 3
+        '            Throw New Exception("$$")
+        '    End Select
+        'End If
     End Sub
 
 #End Region
